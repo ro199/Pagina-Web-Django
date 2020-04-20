@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+    <style>
+    .intro-header{
+        background-image: url({% static 'website/img/intro-bg.jpg' %});
+        background-repeat: no-repeat center center;
+	    background-size: cover;
+    }
+
+    </style>
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Bienvenidos</h1>
+                        <hr class="intro-divider">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

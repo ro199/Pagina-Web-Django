@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Sexo</td>
+            <td>Altura</td>
+            <td>Registro</td>
+            <td>Habilidades</td>
+            <td>Edad</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if Heroes %}
+            {% for heroe in Heroes %}
+            <tr>
+                <td>{{ heroe.id }}</td>
+                <td>{{ heroe.nombre }}</td>
+                <td>{{ heroe.sexo }}</td>
+                <td>{{ heroe.altura }}</td>
+                <td>{{ heroe.fecha_registro }}</td>
+                <td>{{ heroe.habilidades }}</td>
+                <td>{{ heroe.edad }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <h2>No hay registro de heroes</h2>
+        {% endif%}
+    </tbody>
+</table>
+{% endblock%}
