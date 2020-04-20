@@ -14,8 +14,8 @@
         </tr>
     </thead>
     <tbody>
-        {% if Heroes %}
-            {% for heroe in Heroes %}
+        {% if object_list %}
+            {% for heroe in object_list %}
             <tr>
                 <td>{{ heroe.id }}</td>
                 <td>{{ heroe.nombre }}</td>
@@ -24,6 +24,10 @@
                 <td>{{ heroe.fecha_registro }}</td>
                 <td>{{ heroe.habilidades }}</td>
                 <td>{{ heroe.edad }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'heroe_editar' heroe.id %}">Editar</a>
+                    <a class="btn btn-secondary" href="{% url 'heroe_eliminar' heroe.id %}">Eliminar</a>
+                </td>
             </tr>
             {% endfor %}
         {% else %}
